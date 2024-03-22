@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using Mission11_Michael_Hutchings.Models.ViewModels;
 using Mission11_Michael_Hutchings.Models.ViewModels;
 
+// This is our custom tag helper for pagination
 namespace TheWaterProject.Infrastructure
 {
     [HtmlTargetElement("div", Attributes = "page-model")]

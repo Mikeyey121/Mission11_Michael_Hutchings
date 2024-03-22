@@ -1,4 +1,6 @@
-﻿namespace Mission11_Michael_Hutchings.Models
+﻿
+//This is our interface for the repository pattern
+namespace Mission11_Michael_Hutchings.Models
 {
     public interface IBookstoreRepository
     {

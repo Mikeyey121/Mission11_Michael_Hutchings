@@ -7,6 +7,7 @@ namespace Mission11_Michael_Hutchings.Controllers
 {
     public class HomeController : Controller
     {
+        // Creating a private variable of type IBookstoreRepository
 
         private IBookstoreRepository _repo;
 
@@ -15,6 +16,7 @@ namespace Mission11_Michael_Hutchings.Controllers
             _repo = temp;
         }
 
+        // This is our Index action which takes care of querying and passing the books to the view
         public IActionResult Index(int pageNum = 1)
         {
             int pageSize = 10;

@@ -1,4 +1,5 @@
-﻿namespace Mission11_Michael_Hutchings.Models
+﻿// We inherit from the interface and hav an IQueryable Books 
+namespace Mission11_Michael_Hutchings.Models
 {
     public class EFBookstoreRepository : IBookstoreRepository
     {

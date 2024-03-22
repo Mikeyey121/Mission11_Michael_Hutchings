@@ -1,5 +1,6 @@
 ﻿namespace Mission11_Michael_Hutchings.Models.ViewModels
 {
+    // This is our pagination info for our view models
     public class PaginationInfo
     {
         public int TotalItems { get; set; }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Mission11_Michael_Hutchings.Models;
-
+// This is our model that was built through scaffolding. 
 public partial class Book
 {
     public int BookId { get; set; }
@@ -13,7 +13,7 @@ public partial class Book
 
     public string Publisher { get; set; } 
 
-    public string Isbn { get; set; } = null!;
+    public string Isbn { get; set; } 
 
     public string Classification { get; set; } 
 

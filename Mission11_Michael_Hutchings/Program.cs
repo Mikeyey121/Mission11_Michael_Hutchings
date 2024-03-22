@@ -5,11 +5,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add our database connection using the context file
 builder.Services.AddDbContext<BookstoreContext>(options =>
 {
     options.UseSqlite(builder.Configuration["ConnectionStrings:BookstoreConnections"]);
 });
 
+// Add our repository pattern
 builder.Services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
 
 
@@ -30,6 +33,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// Having the URL expect a pageNum so that it looks better in the URL
 app.MapControllerRoute(
     "pagination",
     "Projects/{pageNum}",

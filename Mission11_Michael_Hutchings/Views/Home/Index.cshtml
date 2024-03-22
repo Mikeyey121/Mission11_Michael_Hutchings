@@ -1,14 +1,19 @@
-﻿@{
+﻿@* This is the Index.cshtml page. We pull in the BooksListViewModel, access the partial view BookSummary, and use pagination *@
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 @model BooksListViewModel
 
-<h3>Books:</h3>
+    <h3>
+        Books:<div page-model="@Model.PaginationInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary" class="btn-group pull-right m-1" style="float:right"></div>
+    </h3>
+    <br />
 
 @foreach (Book b in Model.Books)
 {
     <partial name="BookSummary" model="b" />
 }
 
-<div page-model="@Model.PaginationInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>
+<div page-model="@Model.PaginationInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary" class="btn-group pull-right m-1" style="float:right"></div>
