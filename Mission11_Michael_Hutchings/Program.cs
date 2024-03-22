@@ -1,7 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using Mission11_Michael_Hutchings.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<BookstoreContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:BookstoreConnections"]);
+});
+
+builder.Services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+
 
 var app = builder.Build();
 
@@ -21,7 +31,10 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    "pagination",
+    "Projects/{pageNum}",
+    new { Controller = "Home", action = "Index" }
+    );
 
+app.MapDefaultControllerRoute();
 app.Run();
